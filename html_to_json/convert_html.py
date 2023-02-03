@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Convert html to json."""
 
-import bs4
+import bs4, json
 
 
 def _debug(debug, message, prefix=''):
@@ -72,8 +72,8 @@ def _iterate(
         else:
             if capture_element_values:
                 _record_element_value(part, json_output)
-    return json_output
-
+    return json.dumps(json_output)
+    #return json_output
 
 def convert(
     html_string,
